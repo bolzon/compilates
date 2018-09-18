@@ -1,5 +1,8 @@
 package com.compiler.common;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Token {
 
     private String lexeme = "";
@@ -11,7 +14,15 @@ public class Token {
     }
 
     public boolean compareType(int type) {
-        return (this.type == type);
+        return this.type == type;
+    }
+
+    public boolean compareTypes(List<Integer> types) {
+    	return types.contains(this.type);
+    }
+
+    public boolean compareTypes(Integer... types) {
+    	return Arrays.asList(types).contains(this.type);
     }
 
     public boolean equals(Token token) {

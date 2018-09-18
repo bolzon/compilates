@@ -9,7 +9,7 @@ public class SyntacticException extends Exception {
     private static final long serialVersionUID = 1L;
 
     public static final int UNKNOWN_EXCEPTION = 0;
-    public static final int ILEGAL_TOKEN = 1;
+    public static final int ILLEGAL_TOKEN = 1;
 
     public SyntacticException(Token token, int type) {
         this.type = type;
@@ -41,7 +41,7 @@ public class SyntacticException extends Exception {
 
     private void setMessageByType(int type) {
         switch (type) {
-        case SyntacticException.ILEGAL_TOKEN:
+        case SyntacticException.ILLEGAL_TOKEN:
             setMessage("illegal token");
             break;
 

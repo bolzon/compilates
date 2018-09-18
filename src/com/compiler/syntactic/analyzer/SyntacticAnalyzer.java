@@ -16,7 +16,7 @@ public class SyntacticAnalyzer {
         la = new LexicalAnalyzer(file);
     }
 
-    public void startAnalisys() throws SyntacticException {
+    public void startAnalysis() throws SyntacticException {
         procS();
     }
 
@@ -47,7 +47,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**
@@ -64,9 +64,11 @@ public class SyntacticAnalyzer {
                 return;
             }
         }
-        else if (tk.compareType(TokenType.RW_IF) || tk.compareType(TokenType.RW_FOR)
-                || tk.compareType(TokenType.RW_WHILE) || tk.compareType(TokenType.RW_DECLARE)
-                || tk.compareType(TokenType.IDENTIFIER)) {
+        else if (tk.compareTypes(
+			TokenType.RW_IF, TokenType.RW_FOR,
+			TokenType.RW_WHILE, TokenType.RW_DECLARE,
+			TokenType.IDENTIFIER
+	    )) {
             la.storeToken(tk);
             procCMD();
 
@@ -75,7 +77,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**
@@ -83,8 +85,11 @@ public class SyntacticAnalyzer {
      */
     private void procCMDS() throws SyntacticException {
         tk = la.nextToken();
-        if (tk.compareType(TokenType.RW_IF) || tk.compareType(TokenType.RW_FOR) || tk.compareType(TokenType.RW_WHILE)
-                || tk.compareType(TokenType.RW_DECLARE) || tk.compareType(TokenType.IDENTIFIER)) {
+        if (tk.compareTypes(
+    		TokenType.RW_IF, TokenType.RW_FOR,
+    		TokenType.RW_WHILE, TokenType.RW_DECLARE,
+    		TokenType.IDENTIFIER
+		)) {
             la.storeToken(tk);
             procCMD();
             procCMDS();
@@ -189,7 +194,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**
@@ -249,7 +254,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**
@@ -308,7 +313,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**
@@ -333,7 +338,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**
@@ -413,7 +418,7 @@ public class SyntacticAnalyzer {
         }
 
         // TODO: ERRO!
-        throw new SyntacticException(tk, SyntacticException.ILEGAL_TOKEN);
+        throw new SyntacticException(tk, SyntacticException.ILLEGAL_TOKEN);
     }
 
     /**

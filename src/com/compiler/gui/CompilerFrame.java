@@ -75,7 +75,7 @@ public class CompilerFrame extends JFrame implements CompilerMenuEvents, StatusM
 
                     try {
                         String filePath = file.getAbsolutePath();
-                        (new SyntacticAnalyzer(filePath)).startAnalisys();
+                        (new SyntacticAnalyzer(filePath)).startAnalysis();
 
                         try {
                             Thread.sleep(ms);
