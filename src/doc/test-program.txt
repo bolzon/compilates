@@ -1,0 +1,114 @@
+
+#----------------------------------------------------------------------
+
+ Program to test syntax analysis module.
+
+ Bolzon <blzn@mail.ru>
+ November 2008
+
+----------------------------------------------------------------------#
+
+program main;
+begin
+
+    #- var declaration -#
+
+    declare n1 num;
+    declare n2 num;
+    declare b1 bool;
+    declare s1 string;
+
+    #- value attributions -#
+
+    n1 := 123;
+    n2 := 456.789;
+
+    #- calcs -#
+
+    declare op1 num;
+    declare op2 num;
+    declare res num;
+
+    op1 := 2;
+    op2 := 5;
+
+    res := op1 + op2;
+    res := op1 - op2;
+    res := op1 * op2;
+    res := op1 / op2;
+
+    #- language commands/operators -#
+
+    if (n1 &eq 123) then
+    begin
+        n1 := n1 + 456.987;
+    end
+    else
+    begin
+        if (n1 &gt 5) then
+        begin
+            n1 := n1 + 57E81 * 2.01;
+        end
+        else
+        begin
+            n1 := n1 + 78.21E-10 / 5.01e2;
+        end
+    end
+
+    declare i num;
+
+    for (i := 0 to 10)
+    begin
+
+        declare n3 num;
+
+        n3 := 1;
+        n3 := (n3 * (i + n3));
+
+    end
+
+    declare j num;
+    declare runLoop bool;
+
+    j := 100;
+    runLoop := true;
+
+    while (runLoop not false)
+    begin
+
+        declare n4 num;
+
+        n4 := 0;
+        n4 := (n4 + j * 5);
+
+        j := j - 1;
+
+        if (j != 0) then
+        begin
+            runLoop := false;
+        end
+
+    end
+
+    if (n1 &eq 123) then
+    begin
+        n1 := n1 + 456.987;
+    end
+    else
+    begin
+        if (n1 &gt 5) then
+        begin
+            n1 := n1 + 57E81 * 2.01;
+        end
+        else
+        begin
+            n1 := n1 + 78.21E-10 / 5.01e2;
+        end
+    end
+
+end
+endprog;
+
+#-----------------
+  end of program
+ -----------------#
