@@ -56,7 +56,8 @@ public class CodeReader {
             if (ch == '\n') {
                 line++;
                 column = 0;
-            } else if (ch != '\r') {
+            }
+            else if (ch != '\r') {
                 column++;
             }
         } catch (Exception e) {

@@ -95,7 +95,7 @@ public class LexicalAnalyzer {
     }
 
     private boolean hasTokenBuffer() {
-        return (tokenBuffer != null);
+        return tokenBuffer != null;
     }
 
     private boolean isNumber(char ch) {
@@ -103,35 +103,34 @@ public class LexicalAnalyzer {
     }
     
     private boolean isLiteral(char ch) {
-        return (ch == '\"');
+        return ch == '\"';
     }
 
     private boolean isAttrib(char ch) {
-        return (ch == ':');
+        return ch == ':';
     }
 
     private boolean isRelationalOperator(char ch) {
-        return ((ch == '&') || (ch == '!'));
+        return ch == '&' || ch == '!';
     }
 
     private boolean isOperator(char ch) {
-        return (TokenType.OPERATORS.indexOf(ch) != -1);
+        return TokenType.OPERATORS.indexOf(ch) != -1;
     }
 
     private boolean isIdentifierOrKeyword(char ch) {
-        return (Character.isLetter(ch) || (ch == '_'));
+        return Character.isLetter(ch) || ch == '_';
     }
 
     private boolean isComment(char ch) {
-        return (ch == '#');
+        return ch == '#';
     }
 
     private Token consumeWhiteSpaces() {
         char ch;
 
-        do
-            ch = codeReader.readChar();
-        while (Character.isWhitespace(ch) && (ch != EOF));
+        do ch = codeReader.readChar();
+        while (Character.isWhitespace(ch) && ch != EOF);
 
         if (ch == EOF) {
             return null;

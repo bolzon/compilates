@@ -491,7 +491,7 @@ public class CompilerFrame extends JFrame implements CompilerMenuEvents, StatusM
                 file = new File(filePath);
                 boolean fileOK = file.createNewFile();
 
-                if ((fileOK == false) || (file.canWrite() == false)) {
+                if (!fileOK || !file.canWrite()) {
                     throw new Exception("Cannot create file");
                 }
 

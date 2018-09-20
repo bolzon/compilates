@@ -12,8 +12,11 @@ public class Main {
         JFrame.setDefaultLookAndFeelDecorated(true);
         JDialog.setDefaultLookAndFeelDecorated(true);
 
-		String look = javax.swing.UIManager.getSystemLookAndFeelClassName(); try {
-		javax.swing.UIManager.setLookAndFeel(look); } catch (Exception e) {}
+        try {
+            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+        }
+        catch (Exception e) {
+        }
 
         new CompilerFrame().setVisible(true);
     }
