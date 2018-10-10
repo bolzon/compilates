@@ -1,7 +1,7 @@
 
 #----------------------------------------------------------------------
 
- Program to test syntax analysis module.
+ Program to test lexical and syntax analysis module.
 
  Bolzon <blzn@mail.ru>
  November 2008
