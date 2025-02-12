@@ -41,9 +41,9 @@ public class CompilerFrame extends JFrame implements CompilerMenuEvents, StatusM
 
     public static final String ICON = "/img/compiler.png";
     private final String WND_TITLE = "Compilates";
-    private final Font MENU_FONT = new Font("Tahoma", Font.PLAIN, 11);
-    private final Font CONTENT_FONT = new Font("Courier New", Font.PLAIN, 12);
-    private final Font RESULTS_FONT = new Font("Courier New", Font.PLAIN, 12);
+    private final Font MENU_FONT = new Font("Ubuntu", Font.PLAIN, 16);
+    private final Font CONTENT_FONT = new Font("Monaco", Font.BOLD, 16);
+    private final Font RESULTS_FONT = new Font("Monaco", Font.PLAIN, 14);
     private final String LINE_SEPARATOR = System.getProperty("line.separator");
 
     private JScrollPane spResults = null;
@@ -163,8 +163,8 @@ public class CompilerFrame extends JFrame implements CompilerMenuEvents, StatusM
             final int inc = 5;
             taContents.setTabSize(4);
             taContents.setFont(CONTENT_FONT);
-            taContents.setForeground(new Color(0x00, 0x00, 0x80));
-            taContents.setBackground(new Color(0xff, 0xff, 0xff));
+            taContents.setForeground(new Color(0xff, 0xff, 0x80));
+            taContents.setBackground(new Color(0x20, 0x20, 0x20));
             taContents.setCaretColor(new Color(0x80, 0x80, 0x80));
             taContents.setMargin(new Insets(inc, inc, inc, inc));
 
